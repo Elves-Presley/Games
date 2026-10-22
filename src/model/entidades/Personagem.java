@@ -1,6 +1,9 @@
-package entidades;
+package model.entidades;
 import java.util.List;
 import java.util.Random;
+
+import model.itens.Item;
+
 import java.util.ArrayList;
 
 public class Personagem extends Entidade {

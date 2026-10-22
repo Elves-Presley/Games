@@ -1,4 +1,4 @@
-package entidades;
+package model.entidades;
 
 public abstract class Entidade {
     private String nome;

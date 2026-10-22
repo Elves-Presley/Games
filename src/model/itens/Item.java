@@ -1,4 +1,4 @@
-package entidades;
+package model.itens;
 
 public abstract class Item {
 
