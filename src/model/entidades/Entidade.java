@@ -1,73 +1,81 @@
 package model.entidades;
 
 public abstract class Entidade {
-    private String nome;
-    private int vidaAtual, vidaMaxima;
-    private int ataque;
-    private int chanceCritico;
-    private int defesa;
 
-    public Entidade(String nome, int vidaMaxima, int ataque, int chanceCritico, int defesa){
+    private String nome;
+    private int vidaMaxima;
+    private int vida;
+    private int ataque;
+    private int defesa;
+    private String descricao;
+
+    public Entidade(String nome, int vida, int vidaMaxima, int ataque, int defesa, String descricao) {
         this.nome = nome;
         this.vidaMaxima = vidaMaxima;
-        this.vidaAtual = vidaMaxima;
+        this.vida = vida;
         this.ataque = ataque;
-        this.chanceCritico = chanceCritico;
         this.defesa = defesa;
+        this.descricao = descricao;
     }
 
-
+    
 
     public abstract void atacar(Entidade entidade);
-        
-    public abstract void receberDano();
 
+    public abstract void sofrerDano();
+    
 
+    @Override
+    public String toString(){
+        return String.format("NOME: %s\nVIDA: %d\nATAQUE: %d\nDEFESA: %d\nDESCRIÇÃO: %s", nome, vida, ataque, defesa, descricao);
+    }
 
-    //setters
-    public void setNome(String nome){
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setVidaAtual(int vidaAtual){
-        this.vidaAtual = vidaAtual;
+    public int getVida() {
+        return vida;
     }
 
-    public void setVidaMaxima(int vidaMaxima){
-        this.vidaMaxima = vidaMaxima;
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 
-    public void setAtaque(int ataque){
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
 
-    public void setDefesa(int defesa){
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(int defesa) {
         this.defesa = defesa;
     }
 
-    public void setChanceCritico(int chanceCritico){
-        this.chanceCritico = chanceCritico;
+    public String getDescricao() {
+        return descricao;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
-    //getters
-    public String getNome(){
-        return this.nome;
+    public int getVidaMaxima() {
+        return vidaMaxima;
     }
-    public int getVidaAtual(){
-        return this.vidaAtual;
+
+    public void setVidaMaxima(int vidaMaxima) {
+        this.vidaMaxima = vidaMaxima;
     }
-    public int getVidaMaxima(){
-        return this.vidaMaxima;
-    }
-    public int getAtaque(){
-        return this.ataque;
-    }
-    public int getDefesa(){
-        return this.defesa;
-    }
-    public int getChanceCritico(){
-        return this.chanceCritico;
-    }
-    
+
 }
